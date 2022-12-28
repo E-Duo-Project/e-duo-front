@@ -1,18 +1,14 @@
 import axios from "@/api/util/httpUtil";
 
-function listAttendances(payload, success, fail, lectureId) { 
-    const config = {
+function listAttendances() { 
+    const instance = axios.create({
+        baseURL: "http://localhost/eduo",
         headers: {
-            "Content-Type": "text/plain",
-            "Authorization": `Bearer ${payload.accessToken}`
-        },
-        params: {
-            role: payload.role,
-        },
-    };
-    axios.get("/api/attendance/" + lectureId, config)
-        .then(success)
-        .catch(fail);
+            "Content-Type": "application/json;charset=utf-8",
+            "Authorization": `Bearer ${localStorage.getItem("access-token")}`
+        }
+    });
+    return instance;
 }
 
 export { listAttendances }

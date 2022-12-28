@@ -286,7 +286,6 @@ export default {
             counterOn: false,
             counter: 0,
             isModalOn:false,
-            dialog: false,
             state: 'ins',
             isIdFormat : false,
             isPhoneFormat : false,

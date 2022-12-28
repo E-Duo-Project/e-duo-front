@@ -145,12 +145,11 @@ const userStore = {
             commit("SET_IS_LOGIN_ERROR", false);
             commit("SET_IS_VALID_TOKEN", true);
             let user = {};
-            console.log(response);
             user.name = response.data.name;
             user.userId = response.data.userId;
             user.role = response.data.role;
             commit("SET_USER_INFO", user);
-            router.push("/main");//메인 페이지로 이동
+            router.push("/assignment");//메인 페이지로 이동
         },
         async signUpAssistant({ commit }, {userId, password, name, phone, role, teacherUserId}) {
             const response = await api.post('/auth/signup', {
@@ -173,7 +172,6 @@ const userStore = {
             commit("SET_IS_LOGIN_ERROR", false);
             commit("SET_IS_VALID_TOKEN", true);
             let user = {};
-            console.log(response);
             user.name = response.data.name;
             user.userId = response.data.userId;
             user.role = response.data.role;
@@ -205,7 +203,6 @@ const userStore = {
             commit("SET_IS_LOGIN_ERROR", false);
             commit("SET_IS_VALID_TOKEN", true);
             let user = {};
-            console.log(response);
             user.name = response.data.name;
             user.userId = response.data.userId;
             user.role = response.data.role;
